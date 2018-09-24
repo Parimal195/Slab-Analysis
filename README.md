@@ -1,2 +1,2 @@
 # Slab-Analysis
-their are two files one i s code another contains alpha value.
+You will get the moment at different positions by providing length, breadth and thickness of the slab.
