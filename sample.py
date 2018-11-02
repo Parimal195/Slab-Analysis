@@ -2,11 +2,42 @@
 import numpy as np 
 l1 = float (input("Enter the length(in m)->"))
 l2 = float (input("Enter second length(in m)->"))
-ly = max (l1 , l2)
-lx = min (l1 , l2)
-ratio = ly/lx
+lm = max (l1 , l2)
+ln = min (l1 , l2)
 d = float (input("Enter the Depth(in m)->"))
-l = float (input("Enter the U.D.Live Load(in kN)->"))
+l = float (input("Enter the U.D.Live Load(in kN-m)->"))
+print("\nEnter the conditions available from the given data \n\n 1.Interior Panel \n 2.One short Edge continuous \n 3.One Long Edge Discontinuous \n 4.Two Adjacent edges Discontinuous \n 5.Two short Edges Discontinuous \n 6.Two long Edges Discontinuous \n 7.Three edges Discontinuous(One long Edge Discontinuous) \n 8.Three edges discontinuous(One short Edge Continuous) \n 9.Four edges discontinuous \n")
+l3 = int(input("Enter the Condition->"))
+if l3 == 1:
+    ly = lm - d
+    lx = ln - d
+elif l3 == 2:
+    ly = lm - d
+    lx = ln - (0.5*d+d)
+elif l3 == 3:
+    ly = lm - 1.5*d
+    lx = ln-d
+elif l3 == 4:
+    ly = lm - 1.5*d
+    lx = ln - 1.5*d
+elif l3 == 5:
+    ly = lm-d
+    lx = ln-d
+elif l3 == 6:
+    ly = lm-d
+    lx = ln-d
+elif l3 == 7:
+    ly = lm-1.5*d
+    lx = ln-d
+elif l3 == 8:
+    ly = lm-d
+    lx = lm-1.5*d
+elif l3 == 9:
+    ly = lm-d
+    lx = ln-d
+print("Effective length(ly)= ", ly)
+print("Effective length(lx)= ", lx)
+ratio = lm/ln
 volume = lx*ly*d
 dead_load = 2.5*volume
 total_load = dead_load+l
@@ -30,8 +61,7 @@ for i in range(0,c):
             ans=i               #ratio col no.
             break;
 #print(ans)
-print("\nEnter the conditions available from the given data \n\n 1.Interior Panel \n 2.One short Edge continuous \n 3.One Long Edge Discontinuous \n 4.Two Adjacent edges Discontinuous \n 5.Two short Edges Discontinuous \n 6.Two long Edges Discontinuous \n 7.Three edges Discontinuous(One long Edge Discontinuous) \n 8.Three edges discontinuous(One short Edge Continuous) \n 9.Four edges discontinuous \n")
-l3 = int(input("Enter the Condition->"))
+
 rn = 2*l3-1
 rp = 2*l3
 if ans==-1:
@@ -48,8 +78,8 @@ else:
         alphaxp1=b[rp][ans-1]
         alphaxn=alphaxn1 + (alphaxn2-alphaxn1)*(ratio-b[0][ans-1])/(b[0][ans]-b[0][ans-1])
         alphaxp=alphaxp1 + (alphaxp2-alphaxp1)*(ratio-b[0][ans-1])/(b[0][ans]-b[0][ans-1])
-    Mxn = alphaxn*w*lx*lx
-    Mxp = alphaxp*w*lx*lx
+    Mxn = round(alphaxn*w*lx*lx, 2)
+    Mxp = round(alphaxp*w*lx*lx, 2)
     print("\nAlpha x(-) = "+str(alphaxn))
     print("Alpha x(+) = "+str(alphaxp))
     if Mxn == 0:
@@ -64,8 +94,8 @@ ansy=c-1
 alphayn = b[rn][ansy]
 #print(alphaxn)
 alphayp = b[rp][ansy]
-Myn = alphayn*w*lx*lx
-Myp = alphayp*w*lx*lx
+Myn = round(alphayn*w*lx*lx, 2)
+Myp = round(alphayp*w*lx*lx, 2)
 if Myn == 0:
     print("My(-) condition doesnot exist")
 else:
@@ -79,8 +109,8 @@ if ratio <=2:
 else:
     print("One way slab")
 print("Ratio is =",ratio)
-lx1 = 100*lx
-ly1 = 100*ly
+lx1 = 100*ln
+ly1 = 100*lm
 from tkinter import Tk, Canvas, Frame, BOTH, W
 class Example(Frame):
   
@@ -99,23 +129,25 @@ class Example(Frame):
         canvas.create_rectangle(20, lx1+20, ly1+20, 20, 
             outline="#fb0", fill="#fb0")
         canvas.create_text(0, 10, anchor=W, font="Purisa",
-            text="(0,"+str(lx)+")")
+            text="(0,"+str(ln)+")")
         canvas.create_text(0, 30+lx1, anchor=W, font="Purisa",
             text="(0,0)")
         canvas.create_text(ly1, 10, anchor=W, font="Purisa",
-            text="("+str(ly)+","+str(lx)+")")
+            text="("+str(lm)+","+str(lx)+")")
         canvas.create_text(ly1, 30+lx1, anchor=W, font="Purisa",
-            text="("+str(ly)+",0)")
+            text="("+str(lm)+",0)")
         canvas.create_line(ly1/2+10, lx1/2+20, ly1/2+30, lx1/2+20)
         canvas.create_line( ly1/2+20,lx1/2 + 10, ly1/2+20, lx1/2+30)
         canvas.create_text(ly1/2+30, lx1/2+20, anchor=W, font="Purisa",
-            text="Mx+")
+            text="Mx+ =("+str(Mxp)+")")
+        # canvas.create_text(ly1/2+70, lx1/2+20, anchor=W, font="Purisa",
+        #     text="("+str(Mxp)+")")
         canvas.create_text(ly1+30, lx1/2+20, anchor=W, font="Purisa",
-            text="Mx-")
+            text="Mx- =("+str(Mxn)+")")
         canvas.create_text(ly1/2+10, lx1/2, anchor=W, font="Purisa",
-            text="My+")
+            text="My+ =("+str(Myp)+")")
         canvas.create_text(ly1/2, lx1+40, anchor=W, font="Purisa",
-            text="My-")          
+            text="My- =("+str(Myn)+")")          
         canvas.pack(fill=BOTH, expand=1)
 
 
