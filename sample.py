@@ -1,7 +1,7 @@
 
 import numpy as np 
-l1 = float (input("Enter the length(in m)->"))
-l2 = float (input("Enter second length(in m)->"))
+l1 = float (input("Enter the length end-to-end(in m)->"))
+l2 = float (input("Enter second length end-to-end(in m)->"))
 lm = max (l1 , l2)
 ln = min (l1 , l2)
 d = float (input("Enter the Depth(in m)->"))
@@ -37,7 +37,7 @@ elif l3 == 9:
     lx = ln-d
 print("Effective length(ly)= ", ly)
 print("Effective length(lx)= ", lx)
-ratio = lm/ln
+ratio = ly/lx
 volume = lx*ly*d
 dead_load = 2.5*volume
 total_load = dead_load+l
