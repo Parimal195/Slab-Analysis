@@ -5,36 +5,37 @@ l2 = float (input("Enter second length end-to-end(in m)->"))
 lm = max (l1 , l2)
 ln = min (l1 , l2)
 d = float (input("Enter the Depth(in m)->"))
+w = float (input("Enter the width of column(in m)"))
 l = float (input("Enter the U.D.Live Load(in kN-m)->"))
 print("\nEnter the conditions available from the given data \n\n 1.Interior Panel \n 2.One short Edge continuous \n 3.One Long Edge Discontinuous \n 4.Two Adjacent edges Discontinuous \n 5.Two short Edges Discontinuous \n 6.Two long Edges Discontinuous \n 7.Three edges Discontinuous(One long Edge Discontinuous) \n 8.Three edges discontinuous(One short Edge Continuous) \n 9.Four edges discontinuous \n")
 l3 = int(input("Enter the Condition->"))
 if l3 == 1:
-    ly = lm - d
-    lx = ln - d
+    ly = lm - w
+    lx = ln - w
 elif l3 == 2:
-    ly = lm - d
-    lx = ln - (0.5*d+d)
+    ly = lm - w
+    lx = ln - (0.5*w+w)
 elif l3 == 3:
-    ly = lm - 1.5*d
-    lx = ln-d
+    ly = lm - 1.5*w
+    lx = ln-w
 elif l3 == 4:
-    ly = lm - 1.5*d
-    lx = ln - 1.5*d
+    ly = lm - 1.5*w
+    lx = ln - 1.5*w
 elif l3 == 5:
-    ly = lm-d
-    lx = ln-d
+    ly = lm-w
+    lx = ln-w
 elif l3 == 6:
-    ly = lm-d
-    lx = ln-d
+    ly = lm-w
+    lx = ln-w
 elif l3 == 7:
-    ly = lm-1.5*d
-    lx = ln-d
+    ly = lm-1.5*w
+    lx = ln-w
 elif l3 == 8:
-    ly = lm-d
-    lx = lm-1.5*d
+    ly = lm-w
+    lx = lm-1.5*w
 elif l3 == 9:
-    ly = lm-d
-    lx = ln-d
+    ly = lm-w
+    lx = ln-w
 print("Effective length(ly)= ", ly)
 print("Effective length(lx)= ", lx)
 ratio = ly/lx
