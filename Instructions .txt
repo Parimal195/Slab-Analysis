@@ -1,0 +1,101 @@
+﻿(_   _)( )                  ( )       ( )   ( )           ( )
+  | |  | |__     _ _   ___  | |/')    `\`\_/'/'_    _   _ | |
+  | |  |  _ `\ /'_` )/' _ `\| , <       `\ /'/'_`\ ( ) ( )| |
+  | |  | | | |( (_| || ( ) || |\`\       | |( (_) )| (_) || |
+  (_)  (_) (_)`\__,_)(_) (_)(_) (_)      (_)`\___/'`\___/'(_)
+                    
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+┌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀┐
+You can also visit: https://github.com/Parimal195/Slab-Analysis
+└▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀┘
+_____________________________________________________________
+
+
+This file contains how to use the the program.
+Please follow the following steps.
+------------------------------------------------------
+
+Linux:
+
+-------------------------------------------------------
+Arch:- 
+
+1. Open terminal.
+
+2. Install packages.
+
+    1. sudo pacman -S python
+
+    2. sudo pacman -S python-numpy
+
+    3. sudo pacman -S tk
+
+3. Open terminal in the same folder where the program is stored
+
+4. Run "slab.py" via typing "python3 slab.py"
+
+5. Or double click the "slab.py" to run the program.
+
+6. Enter the values asked and choose the desired condition and you will get the result.
+    
+--------------------------------------------------------
+Ubuntu 16.10 and above:-
+
+1. Open terminal.
+
+2. Install packages.
+
+    1. sudo apt-get install python
+
+    2. sudo apt-get install python-numpy  
+
+    3. sudo apt-get install python-tk.
+
+3. Open terminal in the same folder where the program is stored
+
+4. Run "slab.py" via typing "python3 slab.py"
+
+5. Or double click the "slab.py" to run the program.
+
+6. Enter the values asked and choose the desired condition and you will get the result.
+
+--------------------------------------------------------
+
+Windows:
+
+--------------------------------------------------------
+
+1. Download and install python 3.6.7
+    
+2. Download get-pip.py, being careful to save it as a .py file rather than .txt. Then, run it from the command prompt:
+    "python get-pip.py"
+
+2. Open Command Prompt.
+
+3. Install packages.
+
+    1. pip install numpy
+
+    2. pip install python-tk  
+
+4. Open cmd in the same folder where the program is stored
+
+4. Run "slab.py" via typing "slab.py"
+
+5. Or double click the "slab.py" to run the program.
+
+6. Enter the values asked and choose the desired condition and you will get the result.
+
+--------------------------------------------------------
+
+If Yoy find any issue regarding running the program you can mail us at: kumarparimal01@gmail.com
+You can also vist: https://github.com/Parimal195/Slab-Analysis
+
+_____________________________________________________________
+Team Members:
+Parimal kumar (B16137)
+Nidhika Kadela (B16134)
+Hardeep Malik (B16131)
+Saurabh Kumar (B16143)
+Kirti Jorwal (B16099)
